@@ -37,7 +37,7 @@ class Solution:
         if len(nums) == 0: return -1
 
         l, r = 0, len(nums) - 1
-        while l <= r:
+        while l <= r:  #### !!!!!!!!!!!特别注意这里，要等于才可以，因为有l = r = mid的情况发生
             mid = (l + r) // 2
             if nums[mid] == target: return mid
             if nums[mid] >= nums[l]:  # 说明mid的左半部分是有序的
