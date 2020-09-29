@@ -40,7 +40,7 @@ class Solution:
         while l <= r:  #### !!!!!!!!!!!特别注意这里，要等于才可以，因为有l = r = mid的情况发生
             mid = (l + r) // 2
             if nums[mid] == target: return mid
-            if nums[mid] >= nums[l]:  # 说明mid的左半部分是有序的
+            if nums[mid] >= nums[l]:  # 说明mid的左半部分是有序的,而且要注意，这里mid要取到等号，因为下面的if判断里mid没有用到，所以这里一定要有等号
                 if nums[l] <= target < nums[mid]:
                     r = mid - 1
                 else:
