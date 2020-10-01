@@ -39,6 +39,12 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
+        整体的思路就是说，找到各个边界上的O，并且dfs他们，继续找到与边界O相连的O，把这些o先变成B，然后最后遍历全部元素，把o变成x，把b变回o去
+        
+        时间复杂度：O(n \times m)O(n×m)，其中 nn 和 mm 分别为矩阵的行数和列数。深度优先搜索过程中，每一个点至多只会被标记一次。
+        
+        空间复杂度：O(n \times m)O(n×m)，其中 nn 和 mm 分别为矩阵的行数和列数。主要为深度优先搜索的栈的开销。
+        
         if not board or not board[0]:
             return ## 边界条件判断
         row = len(board)
