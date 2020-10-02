@@ -25,6 +25,15 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+    
+    ### Complexity Analysis
+
+Time complexity: \mathcal{O}(N)O(N). There are three steps here. To identify the middle node takes \mathcal{O}(N)O(N) time. 
+    To reverse the second part of the list, one needs N/2N/2 operations. The final step, to merge two lists, requires N/2N/2 operations as well. 
+    In total, that results in \mathcal{O}(N)O(N) time complexity.
+
+Space complexity: \mathcal{O}(1)O(1), since we do not allocate any additional data structures.
+    
     def reorderList(self, head: ListNode) -> None:
         """
         Do not return anything, modify head in-place instead.
