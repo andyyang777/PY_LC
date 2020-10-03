@@ -58,30 +58,32 @@
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
+    
+    
+    #这题用到的是贪心算法
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
-        new_start, new_end = newInterval
+        newInt_start, newInt_end = newInterval
+        res = []
         idx, n = 0, len(intervals)
-        output = []
 
-        while idx<n and new_start > intervals[idx][0]:
-            output.append(intervals[idx])
+        while idx<n and intervals[idx][0]<newInt_start:
+            res.append(intervals[idx])
             idx += 1
 
-        if not output or output[-1][1] < new_start:
-            output.append(newInterval)
+        if not res or res[-1][1] < newInt_start:
+            res.append(newInterval)
         else:
-            output[-1][1] = max(output[-1][1],new_end)
-
+            res[-1][1] = max(res[-1][1], newInt_end)
 
         while idx<n:
-            interval = intervals[idx]
-            start, end = interval
+            res_interval = intervals[idx]
+            new_star, new_end = res_interval
             idx += 1
 
-            if output[-1][1] < start:
-                output.append(interval)
+            if res[-1][1]<new_star:
+                res.append(res_interval)
             else:
-                output[-1][1] = max(output[-1][1], end)
-        return output
+                res[-1][1] = max(res[-1][1], new_end)
+        return res
         
 # leetcode submit region end(Prohibit modification and deletion)
