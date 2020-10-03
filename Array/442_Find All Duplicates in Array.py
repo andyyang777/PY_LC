@@ -18,6 +18,10 @@
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
+    
+    ### 
+    但是这个方法，其实不符合题目要求的，因为创建了额外的空间，题目要求的是不能有extra space
+    ###
     def findDuplicates(self, nums: List[int]) -> List[int]:
         from collections import Counter
         count = Counter(nums)
