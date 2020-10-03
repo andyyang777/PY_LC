@@ -61,6 +61,13 @@ class Solution:
     
     
     #这题用到的是贪心算法
+    
+    复杂度分析
+
+时间复杂度：O(N)。我们只遍历了一次输入元素。
+空间复杂度：O(N)，输出答案所使用的空间。
+
+
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         newInt_start, newInt_end = newInterval
         res = []
