@@ -34,6 +34,12 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    
+    
+    Time: O(H), because one goes from root down to a leaf.
+    space: O(1)
+    
+    
     def closestValue(self, root: TreeNode, target: float) -> int:
         closest = root.val
         while root:
