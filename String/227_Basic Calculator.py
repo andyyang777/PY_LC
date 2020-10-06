@@ -44,12 +44,11 @@ class Solution:
         :return:
         """
         stack = []
-        num = 0
-        sign = '+'
+        num, sign = 0, '+'
         for i in range(len(s)):
             if s[i].isdigit():
                 num = num * 10 + int(s[i])
-            if s[i] in '+-*/' or i == len(s)-1:
+            if s[i] in '+-*/' or i == len(s) - 1:
                 if sign == '+':
                     stack.append(num)
                 elif sign == '-':
@@ -57,9 +56,11 @@ class Solution:
                 elif sign == '*':
                     stack.append(stack.pop() * num)
                 else:
-                    stack.append(int((stack.pop()/num)))
+                    stack.append(int(stack.pop()/num))
                 num = 0
                 sign = s[i]
         return sum(stack)
+
+
 
 # leetcode submit region end(Prohibit modification and deletion)
